@@ -4,9 +4,9 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>test</title>
+	<title>로그인 화면</title>
 </head>
 <body>
-	<h1>test</h1>
+	<a href="find.jsp">계정 찾기</a>
 </body>
 </html>
