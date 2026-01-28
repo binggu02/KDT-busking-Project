@@ -24,7 +24,7 @@
         </nav>
 
         <div class="auth">
-          <a href="#">login</a>
+          <a href="/login">login</a>
           <a href="#">join</a>
         </div>
       </div>
