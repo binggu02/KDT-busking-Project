@@ -12,4 +12,9 @@ public class MemberController {
 		// TODO Auto-generated method stub
 		return "member/login";
 	}
+	
+	@GetMapping("/join")
+	public String join() {
+		return "member/join";
+	}
 }
