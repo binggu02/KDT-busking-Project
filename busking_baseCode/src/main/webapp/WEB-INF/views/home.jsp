@@ -25,7 +25,7 @@
 
         <div class="auth">
           <a href="/login">login</a>
-          <a href="#">join</a>
+          <a href="/join">join</a>
         </div>
       </div>
     </header>
