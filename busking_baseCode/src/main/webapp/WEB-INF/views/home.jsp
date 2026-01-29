@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -19,7 +21,8 @@
       <div class="container header-inner">
 
         <a class="logo" href="#">
-          <img src="images/logo.png" alt="Busking Logo" class="logo-icon" />
+          <img src="images/buskinglogo.png" alt="Busking Logo" class="logo-icon" />
+		  <img src="images/busking.png" alt="Busking Theme" class="logo-theme" />
           <div class="logo-text">
             <strong>BUSKING</strong><br />
             RESERVATION
@@ -33,8 +36,8 @@
         </nav>
 
         <div class="auth">
-          <a href="member/login.html">login</a>
-          <a href="member/join.html">join</a>
+          <a href="/login">login</a>
+          <a href="/join">join</a>
         </div>
       </div>
     </header>
