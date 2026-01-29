@@ -22,7 +22,7 @@
 
         <a class="logo" href="<c:url value='/'/>">
           <!-- ✅ static/image 아래 이미지 -->
-          <img src="<c:url value='/image/buskinglogo.png'/>" alt="Busking Logo" class="logo-icon" />
+          <img src="<c:url value='/images/buskinglogo.png'/>" alt="Busking Logo" class="logo-icon" />
           <div class="logo-text">
             <strong>BUSKING</strong><br />
             RESERVATION
