@@ -8,8 +8,8 @@
   <title>게시판</title>
 
   <!-- ✅ 루트에 있는 공통 CSS -->
-  <link rel="stylesheet" href="../common.css" />
-  <link rel="stylesheet" href="../main.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/main.css" />
 
   <!-- ✅ board 전용 CSS (반드시 마지막) -->
   <link rel="stylesheet" href="./board.css" />
@@ -20,7 +20,7 @@
   <header class="header">
     <div class="container header-inner">
       <a class="logo" href="../home.html">
-        <img src="../buskinglogo.png" alt="BUSKING RESERVATION" class="logo-icon" />
+        <img src="images/buskinglogo.png" alt="BUSKING RESERVATION" class="logo-icon" />
       </a>
 
       <nav class="nav">

@@ -9,7 +9,7 @@
   align-items: center;
 
   /* 히어로 배경(원하면 변경) */
-  background-image: url("busking.png");
+ background-image: url("/image/busking.png");
   background-size: cover;
   background-position: center;
   color: #fff;
