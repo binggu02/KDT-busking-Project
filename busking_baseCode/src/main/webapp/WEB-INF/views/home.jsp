@@ -15,7 +15,7 @@
     <!-- 헤더(로고 + 메뉴 + 로그인/가입) -->
     <header class="header">
       <div class="container header-inner">
-        <a class="logo" href="#">BUSKING</a>
+        <a class="logo" href="images/logo.png">BUSKING</a>
 
         <nav class="nav">
           <a href="#">장비 예약</a>
