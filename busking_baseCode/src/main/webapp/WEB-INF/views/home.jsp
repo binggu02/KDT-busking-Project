@@ -20,7 +20,7 @@
         <nav class="nav">
           <a href="#">장비 예약</a>
           <a href="#">지역별 장소 예약</a>
-          <a href="#">게시판</a>
+          <a href="/boardmain">게시판</a>
         </nav>
 
         <div class="auth">
