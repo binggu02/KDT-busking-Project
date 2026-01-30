@@ -43,7 +43,7 @@
               <a href="<c:url value='/member/logout'/>">logout</a>
             </c:when>
             <c:otherwise>
-              <a href="<c:url value='/member/login'/>">login</a>
+              <a href="/login">로그인</a>
               <a href="<c:url value='/member/join'/>">join</a>
             </c:otherwise>
           </c:choose>
