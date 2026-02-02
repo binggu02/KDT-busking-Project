@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Busking Reservation - Main</title>
 
-  <!-- static/css -->
   <link rel="stylesheet" href="<c:url value='/css/common.css'/>" />
   <link rel="stylesheet" href="<c:url value='/css/main.css'/>" />
 </head>
@@ -34,24 +33,27 @@
         <a href="<c:url value='/board/boardmain'/>">게시판</a>
       </nav>
 
-      <div class="auth">
-        <c:choose>
-          <c:when test="${not empty sessionScope.loginUser}">
-            <span>${sessionScope.loginUser.nickname}님</span>
-            <a href="<c:url value='/member/logout'/>">logout</a>
-          </c:when>
-          <c:otherwise>
-            <a href="<c:url value='/login'/>">로그인</a>
-            <a href="<c:url value='/member/join'/>">join</a>
-          </c:otherwise>
-        </c:choose>
-      </div>
+      <!-- ✅ 로그인 상태일 때만 표시 -->
+      <c:if test="${not empty sessionScope.loginUser}">
+        <div class="auth">
+          <span>
+            <c:choose>
+              <c:when test="${not empty sessionScope.loginUser.nickname}">
+                ${sessionScope.loginUser.nickname}님
+              </c:when>
+              <c:otherwise>
+                ${sessionScope.loginUser.memberId}님
+              </c:otherwise>
+            </c:choose>
+          </span>
+          <a href="<c:url value='/member/logout'/>">logout</a>
+        </div>
+      </c:if>
 
     </div>
   </header>
 
   <!-- ================= HERO ================= -->
-  <!-- hero 배경 이미지는 main.css에서 /images/busking.png 사용 -->
   <section class="hero">
     <div class="container hero-inner">
       <h1>나만의 버스킹 무대를 펼쳐보세요</h1>
