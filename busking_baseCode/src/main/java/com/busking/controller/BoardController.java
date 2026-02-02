@@ -5,13 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/border")
-public class BorderController {
+public class BoardController {
 
-	@GetMapping("/test")
-	public String test() {
+	@GetMapping("/boardmain")
+	public String boardmain() {
 		// TODO Auto-generated method stub
-		return "test";
+		return "board/main";
 	}
 
 }

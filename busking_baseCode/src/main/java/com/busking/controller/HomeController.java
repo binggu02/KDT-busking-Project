@@ -9,7 +9,7 @@ public class HomeController {
 	@GetMapping("/")
 	public String home() {
 		// TODO Auto-generated method stub
-		return "index";
+		return "home";
 	}
 
 }
