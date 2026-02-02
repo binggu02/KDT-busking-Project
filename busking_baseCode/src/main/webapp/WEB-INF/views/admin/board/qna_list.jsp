@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>게시판 관리</title>
+    <title>Q&A 관리</title>
 
     <style>
         * {
@@ -12,8 +14,11 @@
             font-family: "Pretendard", Arial, sans-serif;
         }
 
-        body { background-color: #e5e5e5; }
+        body {
+            background-color: #e5e5e5;
+        }
 
+        /* ===== 헤더 ===== */
         .header {
             position: fixed;
             top: 0;
@@ -31,7 +36,8 @@
         .header::before {
             content: "";
             position: absolute;
-            inset: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0,0,0,0.4);
             z-index: 1;
         }
@@ -45,19 +51,32 @@
             z-index: 2;
         }
 
-        .menu { display: flex; gap: 30px; z-index: 2; }
-        .menu span, .logout { color: white; font-size: 14px; }
+        .menu {
+            display: flex;
+            gap: 30px;
+            z-index: 2;
+        }
+
+        .menu span {
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
 
         .logout {
+            color: white;
             border: 1px solid white;
             padding: 6px 16px;
             border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
         }
 
+        /* ===== 레이아웃 ===== */
         .container {
             display: flex;
             margin-top: 80px;
-            height: calc(100vh - 80px);
+            min-height: calc(100vh - 80px);
         }
 
         aside {
@@ -66,69 +85,72 @@
             padding: 30px 20px;
         }
 
-        aside ul { list-style: none; }
+        aside ul {
+            list-style: none;
+        }
 
-        aside li { margin-bottom: 20px; }
+        aside li {
+            margin-bottom: 20px;
+            font-size: 15px;
+            cursor: pointer;
+        }
 
-        aside a {
-            text-decoration: none;
-            color: black;
+        aside li:hover {
             font-weight: bold;
         }
 
         main {
             flex: 1;
-            background: white;
+            background-color: #fff;
             padding: 40px;
+        }
+
+        /* ===== 테이블 ===== */
+        h2 {
+            margin-bottom: 20px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            text-align: center;
+            background-color: #fff;
+        }
+
+        thead {
+            background-color: #f3f3f3;
         }
 
         th, td {
             padding: 14px;
             border-bottom: 1px solid #ddd;
+            text-align: center;
         }
 
-        thead { background: #f2f2f2; }
-
         .manage-btns {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
 
-.manage-btns button {
-    border: none;
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-size: 13px;
-    cursor: pointer;
-    color: white;
-}
+        .manage-btns button {
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            color: white;
+        }
 
-.manage-btns .delete {
-    background-color: #ff4d4f;
-}
-
-.manage-btns .edit {
-    background-color: #ff7875;
-}
-
-.manage-btns .view {
-    background-color: #ff4d4f;
-}
-
+        .delete { background-color: #ff4d4f; }
+        .edit { background-color: #ff7875; }
+        .view { background-color: #ff4d4f; }
     </style>
 </head>
 
 <body>
 
 <header class="header">
-    <a href="home.html">
+    <a href="./home.html">
         <img src="./images/buskinglogo.png" class="logo-img">
     </a>
 
@@ -141,25 +163,24 @@
 </header>
 
 <div class="container">
-  <aside>
+     <aside>
         <ul>
             <li onclick="location.href='admin_board.html'">게시판 관리</li>
             <li onclick="location.href='admin_qna.html'">Q&A 관리</li>
             <li onclick="location.href='admin_gear.html'"><b>장비 예약 관리</b></li>
             <li onclick="location.href='admin_location.html'"><b>장소 예약 관리</b></li>
-           <li onclick="location.href='admin_member.html'"><b>회원 관리</b></li>
+          <li onclick="location.href='admin_member.html'"><b>회원 관리</b></li>
         </ul>
     </aside>
 
-
     <main>
-        <h2>게시판 관리</h2>
+        <h2>Q&A 관리</h2>
 
         <table>
             <thead>
                 <tr>
                     <th>번호</th>
-                    <th>제목</th>
+                    <th>질문 제목</th>
                     <th>작성자</th>
                     <th>작성일</th>
                     <th>관리</th>
@@ -168,21 +189,14 @@
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>공지사항</td>
-                    <td>관리자</td>
-                    <td>2026-01-20</td>
+                    <td>예약 취소는 어떻게 하나요?</td>
+                    <td>user01</td>
+                    <td>2026-01-22</td>
                     <td class="manage-btns">
-    <button class="delete">삭제</button>
-    <button class="edit">수정</button>
-    <button class="view">확인</button>
-</td>
-
->
-            </tbody>
-
->
-            </tbody>
-
+                        <button class="delete">삭제</button>
+                        <button class="edit">답변</button>
+                        <button class="view">확인</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
