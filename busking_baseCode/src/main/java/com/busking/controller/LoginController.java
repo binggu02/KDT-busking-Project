@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,8 +29,7 @@ public class MemberController {
         Member member = memberService.login(memberId, pw);
 
         if (member == null) {
-            // 로그인 실패 → 다시 로그인 페이지
-            return "login";
+            return "login"; // 로그인 실패
         }
 
         // ⭐ 로그인 성공 → 세션 생성
@@ -41,7 +41,36 @@ public class MemberController {
     // 🚪 로그아웃
     @GetMapping("/logout")
     public String logout(HttpSession session) {
-        session.invalidate(); // 세션 삭제
+        session.invalidate();
         return "redirect:/";
+    }
+
+    // ================= 아이디 찾기 =================
+    @PostMapping("/find-id")
+    public String findId(@RequestParam String name,
+                         @RequestParam String phone,
+                         @RequestParam String email,
+                         Model model) {
+
+        String memberId = memberService.findMemberId(name, phone, email);
+
+        model.addAttribute("memberId", memberId);
+        return "member/findIdResult"; // 결과 JSP
+    }
+
+    // ================= 비밀번호 찾기 =================
+    @PostMapping("/find-pw")
+    public String findPw(@RequestParam String name,
+                         @RequestParam String memberId,
+                         @RequestParam String phone,
+                         @RequestParam String email,
+                         Model model) {
+
+        boolean result = memberService.checkMemberForPw(name, memberId, phone, email);
+
+        model.addAttribute("result", result);
+        model.addAttribute("memberId", memberId);
+
+        return "member/findPwResult"; // 결과 JSP
     }
 }

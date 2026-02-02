@@ -10,61 +10,57 @@
 
 <h2>회원가입</h2>
 
-<form action="/register" method="POST">
+<form action="<c:url value='/member/register'/>" method="post">
 
     <!-- 아이디 -->
     <p>
-        <label for="user_id">아이디</label><br>
-        <input type="text" id="user_id" name="user_id" required placeholder="아이디를 입력하세요">
+        <label>아이디</label><br>
+        <input type="text" name="memberId" required>
     </p>
 
     <!-- 비밀번호 -->
     <p>
-        <label for="password">비밀번호</label><br>
-        <input type="password" id="password" name="password" required>
+        <label>비밀번호</label><br>
+        <input type="password" name="pw" required>
     </p>
 
     <!-- 이름 -->
     <p>
-        <label for="name">이름</label><br>
-        <input type="text" id="name" name="name" required>
+        <label>이름</label><br>
+        <input type="text" name="name" required>
     </p>
 
     <!-- 닉네임 -->
     <p>
-        <label for="nickname">닉네임</label><br>
-        <input type="text" id="nickname" name="nickname" required>
+        <label>닉네임</label><br>
+        <input type="text" name="nickname">
     </p>
 
     <!-- 이메일 -->
     <p>
-        <label for="useremail">이메일</label><br>
-        <input type="email" id="useremail" name="useremail" placeholder="example@email.com">
+        <label>이메일</label><br>
+        <input type="email" name="email">
     </p>
 
     <!-- 전화번호 -->
     <p>
-        <label for="phone">전화번호</label><br>
-        <input type="tel" id="phone" name="phone" placeholder="010-1234-5678">
+        <label>전화번호</label><br>
+        <input type="tel" name="phone">
     </p>
 
     <!-- 생년월일 -->
     <p>
-        <label for="birth_date">생년월일</label><br>
-        <input type="date" id="birth_date" name="birth_date">
+        <label>생년월일</label><br>
+        <input type="date" name="birthDate">
     </p>
 
     <!-- 성별 -->
     <p>
         <label>성별</label><br>
-        <input type="radio" name="gender" value="M" id="gender_m">
-        <label for="gender_m">남</label>
-
-        <input type="radio" name="gender" value="F" id="gender_f">
-        <label for="gender_f">여</label>
+        <input type="radio" name="gender" value="M"> 남
+        <input type="radio" name="gender" value="F"> 여
     </p>
 
-    <!-- 가입 버튼 -->
     <button type="submit">가입하기</button>
 
 </form>
