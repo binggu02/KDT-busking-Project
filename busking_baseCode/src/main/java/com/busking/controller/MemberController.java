@@ -26,20 +26,20 @@ public class MemberController {
         return "member/login";
     }
 
-//    @PostMapping("/login")
-//    public String login(@RequestParam String memberId,
-//                        @RequestParam String pw,
-//                        HttpSession session) {
-//
-//        Member member = memberService.login(memberId, pw);
-//
-//        if (member == null) {
-//            return "member/login";
-//        }
-//
-//        session.setAttribute("loginUser", member);
-//        return "redirect:/";
-//    }
+    @PostMapping("/login")
+    public String login(@RequestParam String memberId,
+                        @RequestParam String pw,
+                       HttpSession session) {
+
+        Member member = memberService.login(memberId, pw);
+
+        if (member == null) {
+            return "member/login";
+       }
+
+        session.setAttribute("loginUser", member);
+        return "redirect:/members";
+    }
 
     // ================= 로그아웃 =================
     @GetMapping("/logout")
