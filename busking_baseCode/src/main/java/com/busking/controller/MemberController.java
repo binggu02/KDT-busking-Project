@@ -1,6 +1,6 @@
 package com.busking.controller;
 
-import com.busking.entity.Member;
+import com.busking.domain.Member;
 import com.busking.service.MemberService;
 
 import jakarta.servlet.http.HttpSession;
@@ -20,29 +20,49 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
-    // 🔐 로그인 처리
-    @PostMapping("/login")
-    public String login(@RequestParam String memberId,
-                        @RequestParam String pw,
-                        HttpSession session) {
-
-        Member member = memberService.login(memberId, pw);
-
-        if (member == null) {
-            return "login"; // 로그인 실패
-        }
-
-        // ⭐ 로그인 성공 → 세션 생성
-        session.setAttribute("loginUser", member);
-
-        return "redirect:/mypage";
+    // ================= 로그인 =================
+    @GetMapping("/login")
+    public String loginForm() {
+        return "member/login";
     }
 
-    // 🚪 로그아웃
+//    @PostMapping("/login")
+//    public String login(@RequestParam String memberId,
+//                        @RequestParam String pw,
+//                        HttpSession session) {
+//
+//        Member member = memberService.login(memberId, pw);
+//
+//        if (member == null) {
+//            return "member/login";
+//        }
+//
+//        session.setAttribute("loginUser", member);
+//        return "redirect:/";
+//    }
+
+    // ================= 로그아웃 =================
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
         return "redirect:/";
+    }
+
+    // ================= 회원가입 =================
+    @GetMapping("/register")
+    public String registerForm() {
+        return "member/join";
+    }
+
+    @PostMapping("/register")
+    public String register(Member member) {
+        memberService.register(member);
+        return "redirect:/member/joinSuccess";
+    }
+
+    @GetMapping("/joinSuccess")
+    public String joinSuccess() {
+        return "member/joinfinal";
     }
 
     // ================= 아이디 찾기 =================
@@ -53,9 +73,9 @@ public class MemberController {
                          Model model) {
 
         String memberId = memberService.findMemberId(name, phone, email);
-
         model.addAttribute("memberId", memberId);
-        return "member/findIdResult"; // 결과 JSP
+
+        return "member/findIdResult";
     }
 
     // ================= 비밀번호 찾기 =================
@@ -71,6 +91,6 @@ public class MemberController {
         model.addAttribute("result", result);
         model.addAttribute("memberId", memberId);
 
-        return "member/findPwResult"; // 결과 JSP
+        return "member/findPwResult";
     }
 }
