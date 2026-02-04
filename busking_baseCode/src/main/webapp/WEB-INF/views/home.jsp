@@ -1,16 +1,15 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Busking Reservation - Main</title>
 
-<!-- 공통 스타일 -->
-<link rel="stylesheet" href="css/common.css" />
-<!-- 메인 페이지 전용 스타일 -->
-<link rel="stylesheet" href="css/main.css" />
+<!-- CSS -->
+<link rel="stylesheet" href="<c:url value='/css/common.css'/>" />
+<link rel="stylesheet" href="<c:url value='/css/main.css'/>" />
 </head>
 <body>
 
@@ -20,15 +19,16 @@
 		<header class="header">
 			<div class="container header-inner">
 
-				<a class="logo" href="#"> <img src="/images/buskinglogo.png"
-					alt="Busking Logo" class="logo-icon" />
+				<a class="logo" href="<c:url value='/'/>"> <img
+					src="<c:url value='/images/buskinglogo.png'/>" class="logo-icon" />
 					<div class="logo-text">
-						<strong>BUSKING</strong><br /> RESERVATION
+						<strong>BUSKING</strong><br />RESERVATION
 					</div>
 				</a>
 
 				<nav class="nav">
-					<a href="#">장비 예약</a> <a href="#">지역별 장소 예약</a> <a href="#">게시판</a>
+					<a href="./gear/list.jsp">장비 예약</a> <a href="./locale/list.jsp">지역별
+						장소 예약</a> <a href="./board/main.jsp">게시판</a>
 				</nav>
 
 				<div class="auth">
@@ -43,9 +43,9 @@
 					<c:if test="${not empty loginUser}">
 						<a href="<c:url value='/mypage'/>"> ${loginUser.memberId} </a>
 						<a href="<c:url value='/member/logout'/>">logout</a>
-						
-  
-</a>
+
+
+						</a>
 					</c:if>
 
 				</div>
@@ -57,7 +57,6 @@
 		<section class="hero">
 			<div class="container hero-inner">
 				<h1>나만의 버스킹 무대를 펼쳐보세요</h1>
-
 			</div>
 		</section>
 
@@ -65,48 +64,43 @@
 		<main class="main">
 			<div class="container">
 
-				<!-- ✅ 인기 장소 -->
+				<!-- 인기 장소 -->
 				<section class="section">
 					<div class="section-head">
 						<h2>인기 장소</h2>
-						<a class="more" href="#">더보기</a>
+						<a class="more" href="./locale/list.jsp">더보기</a>
 					</div>
 
 					<div class="grid grid-3">
 						<article class="card place-card">
-							<a href="#" class="place-link">
-								<div class="thumb">
-									<img src="/images/Hongdae.png" alt="인기 장소 1">
-								</div>
-								<div class="card-body">
-									<h3 class="card-title">홍대 걷고싶은거리</h3>
-									<p class="card-desc">서울 마포구</p>
-								</div>
-							</a>
+							<div class="thumb">
+								<img src="/images/Hongdae.png" alt="인기 장소 1">
+							</div>
+
+							<div class="card-body">
+								<h3>홍대 걷고싶은거리</h3>
+								<p>서울 마포구</p>
+							</div>
 						</article>
 
 						<article class="card place-card">
-							<a href="#" class="place-link">
-								<div class="thumb">
-									<img src="/images/Han River.png" alt="인기 장소 2">
-								</div>
-								<div class="card-body">
-									<h3 class="card-title">한강 반포공원</h3>
-									<p class="card-desc">서울 서초구</p>
-								</div>
-							</a>
+							<div class="thumb">
+								<img src="/images/Han River.png" alt="인기 장소 2">
+							</div>
+							<div class="card-body">
+								<h3>한강 반포공원</h3>
+								<p>서울 서초구</p>
+							</div>
 						</article>
 
 						<article class="card place-card">
-							<a href="#" class="place-link">
-								<div class="thumb">
-									<img src="/images/Gwanganri.png" alt="인기 장소 3">
-								</div>
-								<div class="card-body">
-									<h3 class="card-title">광안리 해변</h3>
-									<p class="card-desc">부산 수영구</p>
-								</div>
-							</a>
+							<div class="thumb">
+								<img src="/images/Gwanganri.png" alt="인기 장소 3">
+							</div>
+							<div class="card-body">
+								<h3>광안리 해변</h3>
+								<p>부산 수영구</p>
+							</div>
 						</article>
 					</div>
 				</section>
@@ -137,9 +131,7 @@
 
 		<!-- ================= FOOTER ================= -->
 		<footer class="footer">
-			<div class="container">
-				<p>© Busking Reservation</p>
-			</div>
+			<p>© Busking Reservation</p>
 		</footer>
 
 	</div>
