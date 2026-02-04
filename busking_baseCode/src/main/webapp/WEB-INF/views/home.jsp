@@ -43,6 +43,9 @@
 					<c:if test="${not empty loginUser}">
 						<a href="<c:url value='/mypage'/>"> ${loginUser.memberId} </a>
 						<a href="<c:url value='/member/logout'/>">logout</a>
+						
+  
+</a>
 					</c:if>
 
 				</div>

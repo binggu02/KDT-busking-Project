@@ -15,17 +15,18 @@ public class MyPageController {
        마이페이지 메인
        /mypage
        ========================= */
-    @GetMapping("")
-    public String main(HttpSession session, Model model) {
+	@GetMapping("")
+	public String main(HttpSession session, Model model) {
 
-        Member loginMember = (Member) session.getAttribute("loginMember");
-        if (loginMember == null) {
-            return "redirect:/member/login";
-        }
+	    Member loginMember = (Member) session.getAttribute("loginUser");
+	    if (loginMember == null) {
+	        return "redirect:/member/login";
+	    }
 
-        model.addAttribute("member", loginMember);
-        return "mypage/main";
-    }
+	    model.addAttribute("member", loginMember);
+	    return "mypage/main";
+	}
+
 
     /* =========================
        프로필 수정
