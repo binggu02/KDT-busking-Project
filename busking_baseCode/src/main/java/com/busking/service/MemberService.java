@@ -36,6 +36,16 @@ public class MemberService {
 
         return member.getMemberId();
     }
+    
+    // ================= 로그인 =================
+    public Member login(String memberId, String pw) {
+        Member member = memberRepository.findByMemberId(memberId);
+
+        if (member == null) return null;
+        if (!member.getPw().equals(pw)) return null;
+
+        return member;
+    }
 
 
     // ID 중복 검사 로직

@@ -1,6 +1,7 @@
 package com.busking.controller;
 
 import com.busking.domain.Member;
+
 import com.busking.service.MemberService;
 
 import jakarta.servlet.http.HttpSession;
@@ -38,7 +39,7 @@ public class MemberController {
        }
 
         session.setAttribute("loginUser", member);
-        return "redirect:/members";
+        return "redirect:/";
     }
 
     // ================= 로그아웃 =================

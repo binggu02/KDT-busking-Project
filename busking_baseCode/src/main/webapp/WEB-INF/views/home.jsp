@@ -21,7 +21,7 @@
       <div class="container header-inner">
 
         <a class="logo" href="#">
-          <img src="buskinglogo.png" alt="Busking Logo" class="logo-icon" />
+          <img src="/images/buskinglogo.png" alt="Busking Logo" class="logo-icon" />
           <div class="logo-text">
             <strong>BUSKING</strong><br />
             RESERVATION
@@ -64,7 +64,7 @@
             <article class="card place-card">
               <a href="#" class="place-link">
                 <div class="thumb">
-                  <img src="01.jpg" alt="인기 장소 1">
+                  <img src="/images/Hongdae.png" alt="인기 장소 1">
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">홍대 걷고싶은거리</h3>
@@ -76,7 +76,7 @@
             <article class="card place-card">
               <a href="#" class="place-link">
                 <div class="thumb">
-                  <img src="02.jpg" alt="인기 장소 2">
+                  <img src="/images/Han River.png" alt="인기 장소 2">
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">한강 반포공원</h3>
@@ -88,7 +88,7 @@
             <article class="card place-card">
               <a href="#" class="place-link">
                 <div class="thumb">
-                  <img src="03.jpg" alt="인기 장소 3">
+                  <img src="/images/Gwanganri.png" alt="인기 장소 3">
                 </div>
                 <div class="card-body">
                   <h3 class="card-title">광안리 해변</h3>

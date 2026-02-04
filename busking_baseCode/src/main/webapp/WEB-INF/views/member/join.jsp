@@ -262,7 +262,7 @@
 
 
         <div class="join-links">
-          <a href="./login.html">로그인으로</a>
+          <a href="/member/login">로그인으로</a>
           <span class="divider"></span>
           <a class="find-link" href="./idfind.html">ID</a>
           <span class="slash">/</span>
