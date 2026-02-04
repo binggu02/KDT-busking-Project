@@ -14,22 +14,22 @@
 <body>
   <!-- 헤더 -->
   <header class="header">
-    <div class="container header-inner">
-      <a class="logo" href="../home.html">
-        <img src="images/buskinglogo.png" alt="BUSKING RESERVATION" class="logo-icon" />
-      </a>
+     <div class="container header-inner">
+       <a class="logo" href="../home.jsp">
+         <img src="images/buskinglogo.png" alt="BUSKING RESERVATION" class="logo-icon" />
+       </a>
 
-      <nav class="nav">
-        <a href="#">장비 예약</a>
-        <a href="#">지역별 장소 예약</a>
-        <a href="../boardmain.html">게시판</a>
-      </nav>
+       <nav class="nav">
+         <a href="../gear/list.jsp">장비 예약</a>
+         <a href="../locale/list.jsp">지역별 장소 예약</a>
+         <a href="../board/main.jsp">게시판</a>
+       </nav>
 
-      <div class="auth">
-        <a class="pill" href="../mypage/main.html">my page</a>
-        <a class="pill" href="../member/login.html">logout</a>
-      </div>
-    </div>
+       <div class="auth">
+         <a class="pill" href="../mypage/main.jsp">my page</a>
+         <a class="pill" href="../member/login.jsp">logout</a>
+       </div>
+     </div>
   </header>
 
   <!-- 본문 -->

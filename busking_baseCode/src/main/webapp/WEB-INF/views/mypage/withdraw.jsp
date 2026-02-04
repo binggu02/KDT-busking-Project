@@ -16,30 +16,30 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="container header-inner">
-      <a class="logo" href="../home.html">
-        <img src="../buskinglogo.png" alt="BUSKING RESERVATION" class="logo-icon" />
-      </a>
+	<header class="header">
+	      <div class="container header-inner">
+	        <a class="logo" href="../home.jsp">
+	          <img src="../buskinglogo.png" alt="BUSKING RESERVATION" class="logo-icon" />
+	        </a>
 
-      <nav class="nav">
-        <a href="#">장비 예약</a>
-        <a href="#">지역별 장소 예약</a>
-        <a href="#">게시판</a>
-      </nav>
+	  	  <nav class="nav">
+	  	      <a href="../gear/list.jsp">장비 예약</a>
+	  	      <a href="../locale/list.jsp">지역별 장소 예약</a>
+	  	      <a href="../board/main.jsp">게시판</a>
+	  	    </nav>
 
-      <div class="auth">
-        <a class="pill" href="../member/login.html">logout</a>
-        <a class="pill" href="./main.html">mypage</a>
-      </div>
-    </div>
+	  	    <div class="auth">
+	  	      <a class="pill" href="../mypage/main.jsp">my page</a>
+	  	      <a class="pill" href="../member/login.jsp">logout</a>
+	  	    </div>
+	  	  </div>
   </header>
 
   <main class="main">
     <div class="container">
       <div class="login-wrapper withdraw-card">
 
-        <form id="withdrawForm" action="./main.html" method="post">
+        <form id="withdrawForm" action="./main.jsp" method="post">
           <!-- ✅ 제목/설명 -->
           <h2 class="withdraw-title">정말 탈퇴 하시겠습니까?</h2>
 
@@ -72,7 +72,7 @@
             </button>
           </div>
 
-          <a class="back-link" href="./main.html">회원 목록 &gt;</a>
+          <a class="back-link" href="./main.jsp">회원 목록 &gt;</a>
         </form>
 
       </div>
@@ -124,7 +124,7 @@
       // form.submit();
 
       // 폼 submit 대신 이동을 원하면:
-      location.href = "../home.html";
+      location.href = "../home.jsp";
     });
   </script>
 </body>

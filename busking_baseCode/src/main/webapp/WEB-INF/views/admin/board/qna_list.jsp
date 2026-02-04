@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/test_v2
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -150,7 +154,11 @@
 <body>
 
 <header class="header">
+<<<<<<< HEAD
     <a href="./home.html">
+=======
+    <a href="../main.jsp">
+>>>>>>> origin/test_v2
         <img src="./images/buskinglogo.png" class="logo-img">
     </a>
 
@@ -165,11 +173,19 @@
 <div class="container">
      <aside>
         <ul>
+<<<<<<< HEAD
             <li onclick="location.href='admin_board.html'">게시판 관리</li>
             <li onclick="location.href='admin_qna.html'">Q&A 관리</li>
             <li onclick="location.href='admin_gear.html'"><b>장비 예약 관리</b></li>
             <li onclick="location.href='admin_location.html'"><b>장소 예약 관리</b></li>
           <li onclick="location.href='admin_member.html'"><b>회원 관리</b></li>
+=======
+			<li><a href="./board/list.jsp">게시판 관리</a></li>
+			      <li><a href="./board/qna_list.jsp">Q&A 관리</a></li>
+			      <li><a href="./gear/list.jsp">장비 예약 관리</a></li>
+			      <li><a href="./locale/list.jsp">장소 예약 관리</a></li>
+			      <li><a href="./locale/list.jsp">회원 관리</a></li>
+>>>>>>> origin/test_v2
         </ul>
     </aside>
 

@@ -119,23 +119,23 @@
 
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <a class="logo" href="../home.html">
-      <img src="../buskinglogo.png" alt="logo">
-    </a>
+	<header class="header">
+	   <div class="container header-inner">
+	     <a class="logo" href="../home.jsp">
+	       <img src="images/buskinglogo.png" alt="BUSKING RESERVATION" class="logo-icon" />
+	     </a>
 
-    <nav class="nav">
-      <a href="../gear/geatlist.html">장비 예약</a>
-      <a href="../local/locallist.html">지역별 장소 예약</a>
-      <a href="../boardmain.html">게시판</a>
-    </nav>
+	     <nav class="nav">
+	       <a href="../gear/list.jsp">장비 예약</a>
+	       <a href="../locale/list.jsp">지역별 장소 예약</a>
+	       <a href="../board/main.jsp">게시판</a>
+	     </nav>
 
-    <div class="auth">
-      <a class="pill" href="../mypage/main.html">my page</a>
-      <a class="pill" href="../member/login.html">logout</a>
-    </div>
-  </div>
+	     <div class="auth">
+	       <a class="pill" href="../mypage/main.jsp">my page</a>
+	       <a class="pill" href="../member/login.jsp">logout</a>
+	     </div>
+	   </div>
 </header>
 
 <main class="main">
@@ -166,7 +166,7 @@
 
     <!-- 버튼 -->
     <div class="btn-area">
-      <button class="btn-list" onclick="location.href='./boardmain.html'">
+      <button class="btn-list" onclick="location.href='./main.jsp'">
         목록
       </button>
       <button class="btn-delete" onclick="deleteQna()">
@@ -185,7 +185,7 @@
   function deleteQna() {
     if (confirm("해당 Q&A를 삭제하시겠습니까?")) {
       alert("삭제되었습니다.");
-      location.href = "./boardmain.html"; // Q&A 목록으로 이동
+      location.href = "./main.jsp"; // Q&A 목록으로 이동
     }
   }
 </script>

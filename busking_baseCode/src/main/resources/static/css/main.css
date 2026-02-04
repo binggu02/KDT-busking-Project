@@ -8,15 +8,29 @@
   display: flex;
   align-items: center;
 
-  /* 히어로 배경(원하면 변경) */
-  background-image: url("/images/busking.png");
+  /* ✅ 배너 경로 수정: css/ 기준 → images/로 한 단계 위로 */
+  background-color: #111; /* 이미지 못 떠도 검정 배경 */
+  background-image: url("../images/busking.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+
   color: #fff;
+  position: relative;
+}
+
+/* ✅ 배너 위에 살짝 어둡게(글자 가독성) */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.35);
 }
 
 .hero-inner{
   padding: 70px 0 60px;           /* 히어로 안쪽 여백 */
+  position: relative;
+  z-index: 1;                     /* 오버레이 위로 */
 }
 
 .hero h1{
@@ -49,6 +63,7 @@
 .btn:hover{
   background: rgba(255,255,255,0.18);
 }
+
 
 
 /* =====================
@@ -171,3 +186,4 @@
   font-size:13px;
   white-space:nowrap;
 }
+

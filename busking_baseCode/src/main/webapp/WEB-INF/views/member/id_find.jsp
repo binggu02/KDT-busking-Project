@@ -230,7 +230,7 @@
   <!-- 중앙 카드 -->
   <div class="wrap">
      <div class="brand">
-    <a href="../home.html" aria-label="메인페이지로 이동">
+    <a href="../home.jsp" aria-label="메인페이지로 이동">
       <img src="../buskinglogo.png" alt="BUSKING RESERVATION" />
     </a>
   </div>
@@ -250,10 +250,10 @@
         <button class="btn" type="submit">ID 찾기</button>
 
           <div class="login-links">
-             <a class="find-link" href="./pwfind.html">PW</a>
+             <a class="find-link" href="./pw_find.jsp">PW</a>
                <span class="find-text">찾기</span>
                <span class="divider"></span>
-               <a href="./login.html">로그인</a>
+               <a href="./login.jsp">로그인</a>
           </div>
       </form>
     </div>

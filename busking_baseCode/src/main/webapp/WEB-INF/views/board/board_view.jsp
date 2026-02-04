@@ -143,7 +143,11 @@
 <body>
 
 <header class="header">
+<<<<<<< HEAD
     <a href="home.html">
+=======
+    <a href="../home.jsp">
+>>>>>>> origin/test_v2
         <img src="./images/buskinglogo.png" class="logo-img">
     </a>
 
@@ -175,7 +179,11 @@
         </div>
 
         <div class="btn-area">
+<<<<<<< HEAD
             <button class="btn-list" onclick="location.href='boardmain.html'">목록</button>
+=======
+            <button class="btn-list" onclick="location.href='./board/main.jsp'">목록</button>
+>>>>>>> origin/test_v2
             <button class="btn-edit">수정</button>
            <button class="btn-delete" onclick="deletePost()">삭제</button>
 
@@ -184,7 +192,11 @@
   function deletePost() {
     if (confirm("삭제하시겠습니까?")) {
       alert("게시글이 삭제되었습니다.");
+<<<<<<< HEAD
       location.href = "./boardmain.html"; // 게시판 목록으로 이동
+=======
+      location.href = "./board/main.jsp"; // 게시판 목록으로 이동
+>>>>>>> origin/test_v2
     }
   }
 </script>

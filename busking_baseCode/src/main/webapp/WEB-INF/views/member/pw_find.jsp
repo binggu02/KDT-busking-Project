@@ -223,14 +223,14 @@
     </div>
 
     <div class="modal-actions">
-      <button class="mini-btn" type="button" onclick="location.href='./login.html'">login</button>
+      <button class="mini-btn" type="button" onclick="location.href='./login.jsp'">login</button>
     </div>
   </div>
 
   <!-- 중앙 카드 -->
   <div class="wrap">
      <div class="brand">
-    <a href="../home.html" aria-label="메인페이지로 이동">
+    <a href="../home.jsp" aria-label="메인페이지로 이동">
       <img src="../buskinglogo.png" alt="BUSKING RESERVATION" />
     </a>
   </div>
@@ -256,7 +256,7 @@
              <a class="find-link" href="./idfind.html">Id</a>
                <span class="find-text">찾기</span>
                <span class="divider"></span>
-               <a href="./login.html">로그인</a>
+               <a href="./login.jsp">로그인</a>
           </div>
       </form>
     </div>

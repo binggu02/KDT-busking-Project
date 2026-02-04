@@ -139,7 +139,7 @@
   <div class="joinok-wrap">
     <!-- 로고 -->
     <div class="joinok-brand">
-      <a href="../home.html" aria-label="메인페이지로 이동">
+      <a href="../home.jsp" aria-label="메인페이지로 이동">
     <img src="../buskinglogo.png" alt="BUSKING RESERVATION" />
   </a>
     </div>
@@ -160,10 +160,10 @@
 
       <div class="btn-col">
         <!-- ✅ 경로는 너 파일 구조에 맞게 수정 가능 -->
-        <button class="joinok-btn" type="button" onclick="location.href='../home.html'">
+        <button class="joinok-btn" type="button" onclick="location.href='../home.jsp'">
           메인페이지로 이동
         </button>
-        <button class="joinok-btn" type="button" onclick="location.href='../mypage/main.html'">
+        <button class="joinok-btn" type="button" onclick="location.href='../mypage/main.jsp'">
           마이페이지로 이동
         </button>
       </div>
