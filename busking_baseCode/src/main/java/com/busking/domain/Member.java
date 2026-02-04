@@ -3,44 +3,59 @@ package com.busking.domain;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "member")
 public class Member {
 
+    // ✅ DB PK와 일치
     @Id
-    @Column(name = "member_id", length = 20, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    // 로그인 ID
+    @Column(name = "member_id", length = 20, nullable = false, unique = true)
     private String memberId;
 
-    @Column(name = "pw", length = 20, nullable = false)
+    @Column(length = 100, nullable = false)
     private String pw;
 
-    @Column(name = "name", length = 50, nullable = false)
+    @Column(length = 50, nullable = false)
     private String name;
 
-    @Column(name = "nickname", length = 50)
+    @Column(length = 50)
     private String nickname;
 
-    @Column(name = "email", length = 225)
+    @Column(length = 225)
     private String email;
 
-    @Column(name = "phone", length = 11)
+    @Column(length = 11)
     private String phone;
 
+    // ✅ 날짜 변환 문제 방지
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "birth_date")
     private LocalDate birthDate;
 
-    @Column(name = "gender", length = 1)
+    @Column(length = 1)
     private String gender;
 
-    @Column(name = "created_member_at", updatable = false)
+    // ✅ DB 기본값 사용
+    @Column(
+        name = "created_member_at",
+        insertable = false,
+        updatable = false
+    )
     private LocalDateTime createdMemberAt;
 
     // ===== getter / setter =====
+
+    public Long getId() {
+        return id;
+    }
 
     public String getMemberId() {
         return memberId;

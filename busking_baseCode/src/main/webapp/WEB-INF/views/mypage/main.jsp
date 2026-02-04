@@ -48,7 +48,7 @@
       <!-- 오른쪽 버튼 -->
       <div class="auth">
         <a class="pill" href="../member/login.html">logout</a>
-        <a class="pill" href="../mypage/mypage.html">mypage</a>
+        <<a class="pill" href="<c:url value='/mypage'/>">mypage</a>
       </div>
 
     </div>

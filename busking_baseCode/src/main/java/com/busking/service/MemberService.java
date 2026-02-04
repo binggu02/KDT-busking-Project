@@ -21,9 +21,9 @@ public class MemberService {
     }
 
     // 1. 회원 가입
-    public String join(Member member) {
+    public String register(Member member) {
 
-        if (member.getId() == null || member.getId().isBlank()) {
+        if (member.getMemberId() == null || member.getMemberId().isBlank()) {
             throw new IllegalArgumentException("아이디는 필수입니다.");
         }
 
@@ -34,13 +34,23 @@ public class MemberService {
         validateDuplicateMember(member);
         memberRepository.save(member);
 
-        return member.getId();
+        return member.getMemberId();
+    }
+    
+    // ================= 로그인 =================
+    public Member login(String memberId, String pw) {
+        Member member = memberRepository.findByMemberId(memberId);
+
+        if (member == null) return null;
+        if (!member.getPw().equals(pw)) return null;
+
+        return member;
     }
 
 
     // ID 중복 검사 로직
     private void validateDuplicateMember(Member member) {
-        if (memberRepository.existsById(member.getId())) {
+        if (memberRepository.existsById(member.getMemberId())) {
             throw new IllegalStateException("이미 존재하는 회원 ID입니다.");
         }
     }
