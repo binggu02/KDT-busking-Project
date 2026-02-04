@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>장비 예약 관리</title>
+    <title>Q&A 관리</title>
 
     <style>
         * {
@@ -113,6 +114,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
+            background-color: #fff;
         }
 
         thead {
@@ -123,16 +125,7 @@
             padding: 14px;
             border-bottom: 1px solid #ddd;
             text-align: center;
-            font-size: 14px;
         }
-
-        .status {
-            font-weight: bold;
-        }
-
-        .status.wait { color: #ff9800; }
-        .status.approve { color: #2e7d32; }
-        .status.reject { color: #c62828; }
 
         .manage-btns {
             display: flex;
@@ -149,9 +142,9 @@
             color: white;
         }
 
-        .approve-btn { background-color: #4caf50; }
-        .reject-btn { background-color: #f44336; }
-        .view-btn { background-color: #607d8b; }
+        .delete { background-color: #ff4d4f; }
+        .edit { background-color: #ff7875; }
+        .view { background-color: #ff4d4f; }
     </style>
 </head>
 
@@ -171,7 +164,7 @@
 </header>
 
 <div class="container">
-    <aside>
+     <aside>
         <ul>
 			<li><a href="./board/list.jsp">게시판 관리</a></li>
 			      <li><a href="./board/qna_list.jsp">Q&A 관리</a></li>
@@ -182,32 +175,28 @@
     </aside>
 
     <main>
-        <h2>장비 예약 관리</h2>
+        <h2>Q&A 관리</h2>
 
         <table>
             <thead>
                 <tr>
                     <th>번호</th>
-                    <th>장비명</th>
-                    <th>예약자</th>
-                    <th>예약일</th>
-                    <th>사용일</th>
-                    <th>상태</th>
+                    <th>질문 제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
                     <th>관리</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>마이크 세트</td>
-                    <td>user02</td>
-                    <td>2026-01-23</td>
-                    <td>2026-01-28</td>
-                    <td class="status wait">대기</td>
+                    <td>예약 취소는 어떻게 하나요?</td>
+                    <td>user01</td>
+                    <td>2026-01-22</td>
                     <td class="manage-btns">
-                        <button class="approve-btn">승인</button>
-                        <button class="reject-btn">거절</button>
-                        <button class="view-btn">확인</button>
+                        <button class="delete">삭제</button>
+                        <button class="edit">답변</button>
+                        <button class="view">확인</button>
                     </td>
                 </tr>
             </tbody>

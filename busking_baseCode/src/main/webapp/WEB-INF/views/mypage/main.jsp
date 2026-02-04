@@ -33,27 +33,22 @@
 
   <!-- ✅ 상단 헤더 -->
   <header class="header">
-    <div class="container header-inner">
+      <div class="container header-inner">
+        <a class="logo" href="../home.jsp">
+          <img src="../buskinglogo.png" alt="BUSKING RESERVATION" class="logo-icon" />
+        </a>
 
-      <!-- 로고(이미지) -->
-      <a class="logo" href="../home.html">
-        <img src="images/buskinglogo.png" alt="BUSKING RESERVATION" class="logo-icon" />
-      </a>
+  	  <nav class="nav">
+  	      <a href="../gear/list.jsp">장비 예약</a>
+  	      <a href="../locale/list.jsp">지역별 장소 예약</a>
+  	      <a href="../board/main.jsp">게시판</a>
+  	    </nav>
 
-      <!-- 메뉴 -->
-      <nav class="nav">
-        <a href="#">장비 예약</a>
-        <a href="#">지역별 장소 예약</a>
-        <a href="#">게시판</a>
-      </nav>
-
-      <!-- 오른쪽 버튼 -->
-      <div class="auth">
-        <a class="pill" href="../member/login.html">logout</a>
-        <a class="pill" href="../mypage/mypage.html">mypage</a>
-      </div>
-
-    </div>
+  	    <div class="auth">
+  	      <a class="pill" href="../mypage/main.jsp">my page</a>
+  	      <a class="pill" href="../member/login.jsp">logout</a>
+  	    </div>
+  	  </div>
   </header>
 
   <!-- 배너는 CSS에서 숨김 처리 중 -->
