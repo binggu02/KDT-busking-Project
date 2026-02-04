@@ -37,13 +37,13 @@
 
     <div class="login-card">
       <!-- ✅ 컨트롤러로 전송 -->
-      <form method="post" action="/login">
+      <form method="post" action="<c:url value='/member/login'/> ">
 
         <label class="login-label">ID</label>
         <input
           class="login-input"
           type="text"
-          name="userId"
+          name="memberId"
           placeholder="아이디를 입력하세요"
           required
         />
@@ -52,7 +52,7 @@
         <input
           class="login-input"
           type="password"
-          name="userPw"
+          name="pw"
           placeholder="비밀번호를 입력하세요"
           required
         />
