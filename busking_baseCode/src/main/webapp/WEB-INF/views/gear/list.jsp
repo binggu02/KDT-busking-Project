@@ -19,9 +19,9 @@
       <img src="../buskinglogo.png" class="logo-icon" />
     </a>
     <nav class="nav">
-      <a href="/gear/list">장비 예약</a>
-      <a href="../locale/list.jsp">지역별 장소 예약</a>
-      <a href="../board/main.jsp">게시판</a>
+      <a href="/gear/reserve?gearId=${gear.id}">예약</a>
+      <a href="/locale/list">지역별 장소 예약</a>
+      <a href="/board/main">게시판</a>
     </nav>
   </div>
 </header>

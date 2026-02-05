@@ -1,6 +1,7 @@
 package com.busking.controller;
 
 import com.busking.domain.Member;
+
 import com.busking.service.GearReservationService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -10,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-@Controller("adminGearReservationController")
-@RequestMapping("/admin/gear")
+@Controller
+@RequestMapping("/gear")
 public class GearReservationController {
 
     private final GearReservationService reservationService;
@@ -22,7 +23,14 @@ public class GearReservationController {
 
     // ================= 예약 페이지 =================
     @GetMapping("/reserve")
-    public String reserveForm(@RequestParam Long gearId, Model model) {
+    public String reserveForm(
+            @RequestParam(required = false) Long gearId,
+            Model model
+    ) {
+        if (gearId == null) {
+            return "redirect:/gear/list"; // 또는 에러 페이지
+        }
+
         model.addAttribute("gearId", gearId);
         return "gear/reserve";
     }
