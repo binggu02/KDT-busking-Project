@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -15,21 +16,20 @@
 <body>
   <header class="header">
     <div class="container header-inner">
-      <a class="logo" href="../home.jsp">
+      <a class="logo" href="${pageContext.request.contextPath}/">
         <img src="../buskinglogo.png" alt="BUSKING RESERVATION" class="logo-icon" />
       </a>
 
-	  <nav class="nav">
-	      <a href="../gear/list.jsp">장비 예약</a>
-	      <a href="../locale/list.jsp">지역별 장소 예약</a>
-	      <a href="../board/main.jsp">게시판</a>
-	    </nav>
+      <nav class="nav">
+		<a href="${pageContext.request.contextPath}/gear/list">장비 예약</a>
+		      <a href="${pageContext.request.contextPath}/locale/list">지역별 장소 예약</a>
+		      <a href="${pageContext.request.contextPath}/board/main">게시판</a>
+      </nav>
 
-	    <div class="auth">
-	      <a class="pill" href="../mypage/main.jsp">my page</a>
-	      <a class="pill" href="../member/login.jsp">logout</a>
-	    </div>
-	  </div>
+      <div class="auth">
+		<a class="pill" href="${pageContext.request.contextPath}/mypage">my page</a>
+		      <a class="pill" href="${pageContext.request.contextPath}/member/logout">logout</a>
+      </div>
     </div>
   </header>
 
@@ -37,86 +37,93 @@
     <div class="container">
       <section class="gear-grid">
 
-        <!-- ✅ 중요: href를 "예약페이지 파일명"과 100% 동일하게 -->
-        <a class="gear-link gear-card" href="./gearreserve.html"
-           data-name="기타" data-price="0" data-desc="Body text." data-img="../01.jpg">
-          <div class="thumb" style="background-image:url('../01.jpg')" aria-label="기타 이미지"></div>
-          <div class="card-body">
-            <div class="card-title">기타</div>
-            <div class="card-price">$0</div>
-            <div class="card-desc">Body text.</div>
-          </div>
-        </a>
+		<a href="${pageContext.request.contextPath}/gear/reserve?id=1"
+		   class="gear-card"
+		   data-name="기타" data-price="0" data-desc="Body text." data-img="../01.jpg">
+		  <div class="thumb" style="background-image:url('../01.jpg')" aria-label="기타 이미지"></div>
+		  <div class="card-body">
+		    <div class="card-title">기타</div>
+		    <div class="card-price">$0</div>
+		    <div class="card-desc">Body text.</div>
+		  </div>
+		</a>
 
-        <a class="gear-link gear-card" href="./gearreserve.html"
-           data-name="피아노" data-price="0" data-desc="Body text." data-img="../02.jpg">
-          <div class="thumb" style="background-image:url('../02.jpg')" aria-label="피아노 이미지"></div>
-          <div class="card-body">
-            <div class="card-title">피아노</div>
-            <div class="card-price">$0</div>
-            <div class="card-desc">Body text.</div>
-          </div>
-        </a>
+		<a href="${pageContext.request.contextPath}/gear/reserve?id=2"
+		   class="gear-card"
+		   data-name="피아노" data-price="0" data-desc="Body text." data-img="../02.jpg">
+		  <div class="thumb" style="background-image:url('../02.jpg')" aria-label="피아노 이미지"></div>
+		  <div class="card-body">
+		    <div class="card-title">피아노</div>
+		    <div class="card-price">$0</div>
+		    <div class="card-desc">Body text.</div>
+		  </div>
+		</a>
 
-        <a class="gear-link gear-card" href="./gearreserve.html"
-           data-name="일렉 기타" data-price="0" data-desc="Body text." data-img="../03.jpg">
-          <div class="thumb" style="background-image:url('../03.jpg')" aria-label="일렉 기타 이미지"></div>
-          <div class="card-body">
-            <div class="card-title">일렉 기타</div>
-            <div class="card-price">$0</div>
-            <div class="card-desc">Body text.</div>
-          </div>
-        </a>
+		<a href="${pageContext.request.contextPath}/gear/reserve?id=3"
+		   class="gear-card"
+		   data-name="일렉 기타" data-price="0" data-desc="Body text." data-img="../03.jpg">
+		  <div class="thumb" style="background-image:url('../03.jpg')" aria-label="일렉 기타 이미지"></div>
+		  <div class="card-body">
+		    <div class="card-title">일렉 기타</div>
+		    <div class="card-price">$0</div>
+		    <div class="card-desc">Body text.</div>
+		  </div>
+		</a>
 
-        <a class="gear-link gear-card" href="./gearreserve.html"
-           data-name="전자 드럼" data-price="0" data-desc="Body text." data-img="../01.jpg">
-          <div class="thumb" style="background-image:url('../01.jpg')" aria-label="전자 드럼 이미지"></div>
-          <div class="card-body">
-            <div class="card-title">전자 드럼</div>
-            <div class="card-price">$0</div>
-            <div class="card-desc">Body text.</div>
-          </div>
-        </a>
+		<a href="${pageContext.request.contextPath}/gear/reserve?id=4"
+		   class="gear-card"
+		   data-name="전자 드럼" data-price="0" data-desc="Body text." data-img="../01.jpg">
+		  <div class="thumb" style="background-image:url('../01.jpg')" aria-label="전자 드럼 이미지"></div>
+		  <div class="card-body">
+		    <div class="card-title">전자 드럼</div>
+		    <div class="card-price">$0</div>
+		    <div class="card-desc">Body text.</div>
+		  </div>
+		</a>
 
-        <a class="gear-link gear-card" href="./gearreserve.html"
-           data-name="베이스" data-price="0" data-desc="Body text." data-img="../02.jpg">
-          <div class="thumb" style="background-image:url('../02.jpg')" aria-label="베이스 이미지"></div>
-          <div class="card-body">
-            <div class="card-title">베이스</div>
-            <div class="card-price">$0</div>
-            <div class="card-desc">Body text.</div>
-          </div>
-        </a>
+		<a href="${pageContext.request.contextPath}/gear/reserve?id=5"
+		   class="gear-card"
+		   data-name="베이스" data-price="0" data-desc="Body text." data-img="../02.jpg">
+		  <div class="thumb" style="background-image:url('../02.jpg')" aria-label="베이스 이미지"></div>
+		  <div class="card-body">
+		    <div class="card-title">베이스</div>
+		    <div class="card-price">$0</div>
+		    <div class="card-desc">Body text.</div>
+		  </div>
+		</a>
 
-        <a class="gear-link gear-card" href="./gearreserve.html"
-           data-name="통기타" data-price="0" data-desc="Body text." data-img="../03.jpg">
-          <div class="thumb" style="background-image:url('../03.jpg')" aria-label="통기타 이미지"></div>
-          <div class="card-body">
-            <div class="card-title">통기타</div>
-            <div class="card-price">$0</div>
-            <div class="card-desc">Body text.</div>
-          </div>
-        </a>
+		<a href="${pageContext.request.contextPath}/gear/reserve?id=6"
+		   class="gear-card"
+		   data-name="통기타" data-price="0" data-desc="Body text." data-img="../03.jpg">
+		  <div class="thumb" style="background-image:url('../03.jpg')" aria-label="통기타 이미지"></div>
+		  <div class="card-body">
+		    <div class="card-title">통기타</div>
+		    <div class="card-price">$0</div>
+		    <div class="card-desc">Body text.</div>
+		  </div>
+		</a>
 
-        <a class="gear-link gear-card" href="./gearreserve.html"
-           data-name="마이크" data-price="0" data-desc="Body text." data-img="../01.jpg">
-          <div class="thumb" style="background-image:url('../01.jpg')" aria-label="마이크 이미지"></div>
-          <div class="card-body">
-            <div class="card-title">마이크</div>
-            <div class="card-price">$0</div>
-            <div class="card-desc">Body text.</div>
-          </div>
-        </a>
+		<a href="${pageContext.request.contextPath}/gear/reserve?id=7"
+		   class="gear-card"
+		   data-name="마이크" data-price="0" data-desc="Body text." data-img="../01.jpg">
+		  <div class="thumb" style="background-image:url('../01.jpg')" aria-label="마이크 이미지"></div>
+		  <div class="card-body">
+		    <div class="card-title">마이크</div>
+		    <div class="card-price">$0</div>
+		    <div class="card-desc">Body text.</div>
+		  </div>
+		</a>
 
-        <a class="gear-link gear-card" href="./gearreserve.html"
-           data-name="스피커" data-price="0" data-desc="Body text." data-img="../02.jpg">
-          <div class="thumb" style="background-image:url('../02.jpg')" aria-label="스피커 이미지"></div>
-          <div class="card-body">
-            <div class="card-title">스피커</div>
-            <div class="card-price">$0</div>
-            <div class="card-desc">Body text.</div>
-          </div>
-        </a>
+		<a href="${pageContext.request.contextPath}/gear/reserve?id=8"
+		   class="gear-card"
+		   data-name="스피커" data-price="0" data-desc="Body text." data-img="../02.jpg">
+		  <div class="thumb" style="background-image:url('../02.jpg')" aria-label="스피커 이미지"></div>
+		  <div class="card-body">
+		    <div class="card-title">스피커</div>
+		    <div class="card-price">$0</div>
+		    <div class="card-desc">Body text.</div>
+		  </div>
+		</a>
 
       </section>
     </div>
