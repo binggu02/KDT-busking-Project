@@ -193,76 +193,76 @@
     <div class="join-card">
       <h2 class="join-title">회원가입</h2>
 
-	  <form action="/member/register" method="post">
-	    <div class="join-grid">
+     <form action="/member/register" method="post">
+       <div class="join-grid">
 
-	      <!-- 아이디 -->
-	      <div class="field">
-	        <label for="memberId">아이디</label>
-	        <input type="text" id="memberId" name="memberId" required placeholder="아이디를 입력하세요">
-	      </div>
+         <!-- 아이디 -->
+         <div class="field">
+           <label for="memberId">아이디</label>
+           <input type="text" id="memberId" name="memberId" required placeholder="아이디를 입력하세요">
+         </div>
 
-	      <!-- 비밀번호 -->
-	      <div class="field">
-	        <label for="pw">비밀번호</label>
-	        <input type="password" id="pw" name="pw" required placeholder="비밀번호를 입력하세요">
-	      </div>
+         <!-- 비밀번호 -->
+         <div class="field">
+           <label for="pw">비밀번호</label>
+           <input type="password" id="pw" name="pw" required placeholder="비밀번호를 입력하세요">
+         </div>
 
-	      <!-- 이름 -->
-	      <div class="field">
-	        <label for="name">이름</label>
-	        <input type="text" id="name" name="name" required placeholder="이름을 입력하세요">
-	      </div>
+         <!-- 이름 -->
+         <div class="field">
+           <label for="name">이름</label>
+           <input type="text" id="name" name="name" required placeholder="이름을 입력하세요">
+         </div>
 
-	      <!-- 닉네임 -->
-	      <div class="field">
-	        <label for="nickname">닉네임</label>
-	        <input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력하세요">
-	      </div>
+         <!-- 닉네임 -->
+         <div class="field">
+           <label for="nickname">닉네임</label>
+           <input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력하세요">
+         </div>
 
-	      <!-- 이메일 -->
-	      <div class="field full">
-	        <label for="email">이메일</label>
-	        <input type="email" id="email" name="email" placeholder="example@email.com">
-	      </div>
+         <!-- 이메일 -->
+         <div class="field full">
+           <label for="email">이메일</label>
+           <input type="email" id="email" name="email" placeholder="example@email.com">
+         </div>
 
-	      <!-- 전화번호 -->
-	      <div class="field">
-	        <label for="phone">전화번호</label>
-	        <input type="tel" id="phone" name="phone" placeholder="01012345678">
-	      </div>
+         <!-- 전화번호 -->
+         <div class="field">
+           <label for="phone">전화번호</label>
+           <input type="tel" id="phone" name="phone" placeholder="01012345678">
+         </div>
 
-	      <!-- 생년월일 -->
-	      <div class="field">
-	        <label for="birthDate">생년월일</label>
-	        <input type="date" id="birthDate" name="birthDate">
-	      </div>
+         <!-- 생년월일 -->
+         <div class="field">
+           <label for="birthDate">생년월일</label>
+           <input type="date" id="birthDate" name="birthDate">
+         </div>
 
-	      <!-- 성별 -->
-	      <div class="field full">
-	        <label>성별</label>
-	        <div class="gender-row">
-	          <label for="gender_m">
-	            <input type="radio" name="gender" value="M" id="gender_m">
-	            남
-	          </label>
-	          <label for="gender_f">
-	            <input type="radio" name="gender" value="F" id="gender_f">
-	            여
-	          </label>
-	        </div>
-	      </div>
+         <!-- 성별 -->
+         <div class="field full">
+           <label>성별</label>
+           <div class="gender-row">
+             <label for="gender_m">
+               <input type="radio" name="gender" value="M" id="gender_m">
+               남
+             </label>
+             <label for="gender_f">
+               <input type="radio" name="gender" value="F" id="gender_f">
+               여
+             </label>
+           </div>
+         </div>
 
-	    </div>
+       </div>
 
-	    <button type="submit" class="join-btn">
-	      가입하기
-	    </button>
-	  </form>
+       <button type="submit" class="join-btn">
+         가입하기
+       </button>
+     </form>
 
 
         <div class="join-links">
-          <a href="./login.html">로그인으로</a>
+          <a href="/member/login">로그인으로</a>
           <span class="divider"></span>
           <a class="find-link" href="./idfind.html">ID</a>
           <span class="slash">/</span>

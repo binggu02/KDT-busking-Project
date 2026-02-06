@@ -19,13 +19,21 @@
   <h1>${pageTitle}</h1>
 
   <div class="region-list">
-    <a class="region-card" href="${pageContext.request.contextPath}/locale/seoul">서울</a>
-    <a class="region-card" href="${pageContext.request.contextPath}/locale/incheon">인천</a>
-    <a class="region-card" href="${pageContext.request.contextPath}/locale/busan">부산</a>
-    <a class="region-card" href="${pageContext.request.contextPath}/locale/daegu">대구</a>
-    <a class="region-card" href="${pageContext.request.contextPath}/locale/gwangju">광주</a>
-    <a class="region-card" href="${pageContext.request.contextPath}/locale/ulsan">울산</a>
-    <a class="region-card" href="${pageContext.request.contextPath}/locale/daejeon">대전</a>
+
+    <!-- ✅ DB에서 city 목록 출력 -->
+  <c:forEach var="city" items="${cities}">
+  <a class="region-card"
+     href="${pageContext.request.contextPath}/locale/${city.cityCode}">
+    ${city.cityName}
+  </a>
+</c:forEach>
+
+
+    <!-- ✅ 혹시 cities가 비어있을 때 안내 -->
+    <c:if test="${empty cities}">
+      <p style="padding:16px;">등록된 지역이 없습니다.</p>
+    </c:if>
+
   </div>
 </main>
 </body>

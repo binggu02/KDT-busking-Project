@@ -15,45 +15,37 @@
 
 <main class="main">
   <h1>${pageTitle}</h1>
-  
+
   <div class="place-list">
+    <c:if test="${empty places}">
+      <p style="padding:16px;">등록된 장소가 없습니다.</p>
+    </c:if>
+
     <c:forEach var="place" items="${places}">
       <div class="place-card">
-        <img src="${pageContext.request.contextPath}${place.img}" alt="${place.name}">
+
+        <!-- ✅ thumbnail이 있으면 출력, 없으면 기본 이미지 -->
+        <c:choose>
+          <c:when test="${not empty place.thumbnail}">
+            <img src="${pageContext.request.contextPath}${place.thumbnail}" alt="${place.name}">
+          </c:when>
+          <c:otherwise>
+            <img src="${pageContext.request.contextPath}/images/no-image.png" alt="no image">
+          </c:otherwise>
+        </c:choose>
+
         <h3>${place.name}</h3>
         <p>${place.address}</p>
         <p>${place.phone}</p>
-        <!-- 버튼 클릭 시 JS로 sessionStorage에 저장 -->
-        <button class="btn-reserve"
-                data-name="${place.name}"
-                data-address="${place.address}"
-                data-phone="${place.phone}"
-                data-img="${place.img}">
+
+        <!-- ✅ 예약하기: placeId를 쿼리로 넘겨서 reserve 페이지로 -->
+        <a class="btn-reserve"
+           href="${pageContext.request.contextPath}/locale/reserve?placeId=${place.id}">
           예약하기
-        </button>
+        </a>
       </div>
     </c:forEach>
   </div>
 </main>
-
-<script>
-  const CTX = "${pageContext.request.contextPath}";
-
-  // 예약 버튼 클릭 시 sessionStorage에 선택한 장소 저장 후 reserve 페이지로 이동
-  document.querySelectorAll('.btn-reserve').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const place = {
-        name: btn.dataset.name,
-        address: btn.dataset.address,
-        phone: btn.dataset.phone,
-        img: btn.dataset.img
-      };
-      // sessionStorage에 저장
-      sessionStorage.setItem('selectedPlace', JSON.stringify(place));
-      // 예약 페이지로 이동
-      location.href = CTX + '/locale/reserve';
-    });
-  });
-</script>
 </body>
 </html>
