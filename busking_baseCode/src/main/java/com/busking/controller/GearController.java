@@ -1,6 +1,8 @@
 package com.busking.controller;
 
+import com.busking.service.GearService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,12 +12,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/gear")
 public class GearController {
 
+    private final GearService gearService;
+
+    public GearController(GearService gearService) {
+            this.gearService = gearService;
+        }
+
     /**
      * 장비 목록 페이지
      */
     @GetMapping("/list")
     public String gearList(Model model) {
         // TODO: 나중에 DB에서 장비 리스트 조회
+        model.addAttribute("gearList", gearService.findAll());
         return "gear/list";
     }
 

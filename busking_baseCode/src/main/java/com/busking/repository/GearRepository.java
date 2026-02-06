@@ -1,16 +1,27 @@
 package com.busking.repository;
 
-import java.util.Optional;
+import com.busking.domain.GearReservation;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
-import com.busking.domain.Gear;
+import java.time.LocalDateTime;
 
+public interface GearReservationRepository
+        extends JpaRepository<GearReservation, Long> {
 
-@Repository
-public interface GearRepository extends JpaRepository<Gear, String>{
-	// 아이디로 찾기
-	@Override
-	Optional<Gear> findById(String id);
+    @Query("""
+        SELECT COUNT(r)
+        FROM GearReservation r
+        WHERE r.gear.gearId = :gearId
+          AND r.status <> 'CANCELED'
+          AND r.startDatetime < :endTime
+          AND r.endDatetime > :startTime
+    """)
+    long countOverlap(
+            @Param("gearId") Long gearId,
+            @Param("startTime") LocalDateTime startTime,
+            @Param("endTime") LocalDateTime endTime
+    );
 }
