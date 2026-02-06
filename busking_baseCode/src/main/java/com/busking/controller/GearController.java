@@ -33,16 +33,18 @@ public class GearController {
      * gear/list → 장비 클릭 시 이동
      * 예) /gear/reserve?id=1
      */
-    @GetMapping("/reserve")
-    public String reserve(@RequestParam int id, Model model) {
+    // 정훈이랑 인찬이 코드 중복됨
+    // GearReservationController.java 참고
+    // @GetMapping("/reserve")
+    // public String reserve(@RequestParam int id, Model model) {
 
-        model.addAttribute("gearId", id);
-        model.addAttribute("gearName", "기타");
-        model.addAttribute("gearPrice", 0);
-        model.addAttribute("gearDesc", "장비 설명");
+    //     model.addAttribute("gearId", id);
+    //     model.addAttribute("gearName", "기타");
+    //     model.addAttribute("gearPrice", 0);
+    //     model.addAttribute("gearDesc", "장비 설명");
 
-        return "gear/reserve";
-    }
+    //     return "gear/reserve";
+    // }
 
     /**
      * 예약 완료 페이지
